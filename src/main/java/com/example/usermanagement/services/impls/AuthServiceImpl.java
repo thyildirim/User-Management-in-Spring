@@ -6,7 +6,6 @@ import com.example.usermanagement.dtos.register.RegisterRequest;
 import com.example.usermanagement.dtos.register.RegisterResponse;
 import com.example.usermanagement.entities.User;
 import com.example.usermanagement.exceptions.InvalidCredentialException;
-import com.example.usermanagement.exceptions.NotFoundException;
 import com.example.usermanagement.repositories.UserRepository;
 import com.example.usermanagement.services.AuthService;
 

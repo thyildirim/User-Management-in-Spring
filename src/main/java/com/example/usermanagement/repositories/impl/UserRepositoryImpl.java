@@ -2,7 +2,6 @@ package com.example.usermanagement.repositories.impl;
 
 import com.example.usermanagement.entities.QUser;
 import com.example.usermanagement.entities.User;
-import com.example.usermanagement.exceptions.NotFoundException;
 import com.example.usermanagement.repositories.UserRepository;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import jakarta.persistence.EntityManager;
