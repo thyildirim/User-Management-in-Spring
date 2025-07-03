@@ -35,8 +35,8 @@ public class UserRepositoryImpl implements UserRepository {
                 .from(qUser)
                 .where(qUser.username.eq(username))
                 .fetch();
-        if(result == null) {
-            return null;
+        if (result.size() != 1) {
+            throw new RuntimeException("user not found");
         }
         return result.getFirst();
     }
