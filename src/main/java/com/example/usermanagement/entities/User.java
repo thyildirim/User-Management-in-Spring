@@ -3,13 +3,12 @@ package com.example.usermanagement.entities;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@RequiredArgsConstructor
 @Entity
 @Table(name = "user")
 public class User {
@@ -20,9 +19,11 @@ public class User {
 
     @NotBlank(message = "username should not be blank")
     @Size(min = 3, max = 10)
+    @NonNull
     private String username;
 
     @NotBlank(message = "password should not be blank")
     @Size(min = 3, max = 10)
+    @NonNull
     private String password;
 }
