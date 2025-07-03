@@ -20,6 +20,7 @@ public class User {
     @NotBlank(message = "username should not be blank")
     @Size(min = 3, max = 10)
     @NonNull
+    @Column(unique = true)
     private String username;
 
     @NotBlank(message = "password should not be blank")
