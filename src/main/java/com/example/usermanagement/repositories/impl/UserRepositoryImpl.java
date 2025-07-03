@@ -6,10 +6,12 @@ import com.example.usermanagement.repositories.UserRepository;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Transactional
+@Service
 public class UserRepositoryImpl implements UserRepository {
 
     private final EntityManager entityManager;

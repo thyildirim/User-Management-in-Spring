@@ -8,7 +8,9 @@ import com.example.usermanagement.entities.User;
 import com.example.usermanagement.exceptions.InvalidCredentialException;
 import com.example.usermanagement.repositories.UserRepository;
 import com.example.usermanagement.services.AuthService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class AuthServiceImpl implements AuthService {
 
     private final UserRepository userRepository;
