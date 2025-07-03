@@ -37,7 +37,7 @@ public class UserRepositoryImpl implements UserRepository {
                 .where(qUser.username.eq(username))
                 .fetch();
         if (result.size() != 1) {
-            throw new NotFoundException("User not found");
+            return null;
         }
         return result.getFirst();
     }
