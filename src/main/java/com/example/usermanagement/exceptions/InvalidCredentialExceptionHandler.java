@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 @ControllerAdvice
-public class NotFoundExceptionHandler {
+public class InvalidCredentialExceptionHandler {
 
-    @ExceptionHandler(NotFoundException.class)
-    public ResponseEntity<String> handleNotFound(NotFoundException ex) {
-        return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
+    @ExceptionHandler(InvalidCredentialException.class)
+    public ResponseEntity<String> handleInvalidCredential(InvalidCredentialException ex) {
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.FORBIDDEN);
     }
 }

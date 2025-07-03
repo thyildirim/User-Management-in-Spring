@@ -5,6 +5,8 @@ import com.example.usermanagement.dtos.login.LoginResponse;
 import com.example.usermanagement.dtos.register.RegisterRequest;
 import com.example.usermanagement.dtos.register.RegisterResponse;
 import com.example.usermanagement.entities.User;
+import com.example.usermanagement.exceptions.InvalidCredentialException;
+import com.example.usermanagement.exceptions.NotFoundException;
 import com.example.usermanagement.repositories.UserRepository;
 import com.example.usermanagement.services.AuthService;
 
@@ -27,12 +29,12 @@ public class AuthServiceImpl implements AuthService {
     public LoginResponse login(LoginRequest request) {
         User existingUser = userRepository.findByUsername(request.username());
         if(existingUser == null) {
-            throw new RuntimeException("user not found");
+            throw new InvalidCredentialException("Credentials not valid");
         }
 
         boolean isPasswordCorrect = existingUser.getPassword().equals(request.password());
         if(!isPasswordCorrect) {
-            throw new RuntimeException("invalid credentials");
+            throw new InvalidCredentialException("Credentials not valid");
         }
 
         return new LoginResponse();
