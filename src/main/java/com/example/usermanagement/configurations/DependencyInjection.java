@@ -1,8 +1,8 @@
 package com.example.usermanagement.configurations;
 
 
-import com.example.usermanagement.services.UserService;
-import com.example.usermanagement.services.impls.UserServiceImpl;
+import com.example.usermanagement.services.AuthService;
+import com.example.usermanagement.services.impls.AuthServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 public class DependencyInjection {
 
     @Bean
-    public UserService userService(){
-        return new UserServiceImpl();
+    public AuthService userService(){
+        return new AuthServiceImpl();
     }
 }

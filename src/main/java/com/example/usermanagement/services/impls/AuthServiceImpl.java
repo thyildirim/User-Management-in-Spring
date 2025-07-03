@@ -4,9 +4,9 @@ import com.example.usermanagement.dtos.login.LoginRequest;
 import com.example.usermanagement.dtos.login.LoginResponse;
 import com.example.usermanagement.dtos.register.RegisterRequest;
 import com.example.usermanagement.dtos.register.RegisterResponse;
-import com.example.usermanagement.services.UserService;
+import com.example.usermanagement.services.AuthService;
 
-public class UserServiceImpl implements UserService {
+public class AuthServiceImpl implements AuthService {
 
 
     @Override

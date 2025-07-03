@@ -5,28 +5,28 @@ import com.example.usermanagement.dtos.login.LoginResponse;
 import com.example.usermanagement.dtos.register.RegisterRequest;
 import com.example.usermanagement.dtos.register.RegisterResponse;
 
-import com.example.usermanagement.services.UserService;
+import com.example.usermanagement.services.AuthService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class UserController {
+public class AuthController {
 
-    private final UserService userService;
+    private final AuthService authService;
 
-    public UserController(UserService userService) {
-        this.userService = userService;
+    public AuthController(AuthService authService) {
+        this.authService = authService;
     }
 
     @PostMapping("/register")
     public RegisterResponse register (@RequestBody RegisterRequest request){
-        return userService.register(request);
+        return authService.register(request);
     }
 
     @PostMapping("/login")
     public LoginResponse login (@RequestBody LoginRequest request){
-        return userService.login(request);
+        return authService.login(request);
     }
 
 }

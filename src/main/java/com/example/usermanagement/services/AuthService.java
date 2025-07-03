@@ -5,7 +5,7 @@ import com.example.usermanagement.dtos.login.LoginResponse;
 import com.example.usermanagement.dtos.register.RegisterRequest;
 import com.example.usermanagement.dtos.register.RegisterResponse;
 
-public interface UserService {
+public interface AuthService {
 
     RegisterResponse register (RegisterRequest request);
     LoginResponse login (LoginRequest request);
