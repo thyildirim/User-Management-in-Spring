@@ -33,7 +33,7 @@ public class DependencyInjection {
     }
 
     @Bean
-    public AuthService userService(UserRepository userRepository){
+    public AuthService authService(UserRepository userRepository){
         return new AuthServiceImpl(userRepository);
     }
 }
