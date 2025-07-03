@@ -2,8 +2,11 @@ package com.example.usermanagement.configurations;
 
 
 import com.example.usermanagement.repositories.UserRepository;
+import com.example.usermanagement.repositories.impl.UserRepositoryImpl;
 import com.example.usermanagement.services.AuthService;
 import com.example.usermanagement.services.impls.AuthServiceImpl;
+import com.querydsl.jpa.impl.JPAQueryFactory;
+import jakarta.persistence.EntityManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -13,5 +16,15 @@ public class DependencyInjection {
     @Bean
     public AuthService userService(UserRepository userRepository){
         return new AuthServiceImpl(userRepository);
+    }
+
+    @Bean
+    public JPAQueryFactory jpaQueryFactory(EntityManager entityManager) {
+        return new JPAQueryFactory(entityManager);
+    }
+
+    @Bean
+    public UserRepository userRepository(EntityManager entityManager, JPAQueryFactory jpaQueryFactory){
+        return new UserRepositoryImpl(entityManager, jpaQueryFactory);
     }
 }
