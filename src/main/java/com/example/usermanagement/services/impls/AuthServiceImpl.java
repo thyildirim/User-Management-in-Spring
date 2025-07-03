@@ -30,7 +30,7 @@ public class AuthServiceImpl implements AuthService {
             throw new RuntimeException("user not found");
         }
 
-        boolean isPasswordCorrect = existingUser.getPassword() == request.password();
+        boolean isPasswordCorrect = existingUser.getPassword().equals(request.password());
         if(!isPasswordCorrect) {
             throw new RuntimeException("invalid credentials");
         }
