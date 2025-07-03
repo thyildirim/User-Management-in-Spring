@@ -14,11 +14,6 @@ import org.springframework.context.annotation.Configuration;
 public class DependencyInjection {
 
     @Bean
-    public AuthService userService(UserRepository userRepository){
-        return new AuthServiceImpl(userRepository);
-    }
-
-    @Bean
     public JPAQueryFactory jpaQueryFactory(EntityManager entityManager) {
         return new JPAQueryFactory(entityManager);
     }
@@ -26,5 +21,10 @@ public class DependencyInjection {
     @Bean
     public UserRepository userRepository(EntityManager entityManager, JPAQueryFactory jpaQueryFactory){
         return new UserRepositoryImpl(entityManager, jpaQueryFactory);
+    }
+
+    @Bean
+    public AuthService userService(UserRepository userRepository){
+        return new AuthServiceImpl(userRepository);
     }
 }
