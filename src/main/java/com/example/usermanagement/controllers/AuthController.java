@@ -6,6 +6,7 @@ import com.example.usermanagement.dtos.register.RegisterRequest;
 import com.example.usermanagement.dtos.register.RegisterResponse;
 
 import com.example.usermanagement.services.AuthService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,12 +21,12 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public RegisterResponse register (@RequestBody RegisterRequest request){
+    public RegisterResponse register (@Valid @RequestBody RegisterRequest request){
         return authService.register(request);
     }
 
     @PostMapping("/login")
-    public LoginResponse login (@RequestBody LoginRequest request){
+    public LoginResponse login (@Valid @RequestBody LoginRequest request){
         return authService.login(request);
     }
 
